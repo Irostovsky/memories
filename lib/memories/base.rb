@@ -17,8 +17,6 @@ module Memories
     base.before_update :add_version_attachment
     base.after_save :decode_attachments
     base.send :extend, ClassMethods
-    base.alias_method_chain :save, :destroying_logical_version_and_revision
-    base.alias_method_chain :save!, :destroying_logical_version_and_revision
   end
   
   module ClassMethods #:nodoc: all
@@ -351,16 +349,16 @@ module Memories
     @logical_version_number || self.current_version
   end
 
-  def save_with_destroying_logical_version_and_revision(options={})
+  def save(options={})
     @logical_version_number = nil
     @logical_revision = nil
-    save_without_destroying_logical_version_and_revision(options)
+    super
   end
 
-  def save_with_destroying_logical_version_and_revision!
+  def save!
     @logical_version_number = nil
     @logical_revision = nil
-    save_without_destroying_logical_version_and_revision!
+    super
   end
 
 

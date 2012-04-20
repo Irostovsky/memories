@@ -1,3 +1,6 @@
+v0.3.7
+  -- use super instead of alias_method_chain
+
 v0.3.6
   -- fixed a bug that caused @doc.versions.count and @doc.versions.each to raise exceptions when @doc.new_record? == true
 
