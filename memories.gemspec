@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.files       = Dir["lib/**/*"] << "VERSION" << "readme.markdown"
   s.homepage    = "http://github.com/moonmaster9000/memories"
 
-  s.add_dependency              'couchrest_model', '~> 1.0.0'
+  s.add_dependency              'couchrest_model', '~> 1.1.3'
   s.add_development_dependency  'cucumber'
   s.add_development_dependency  'rspec'
 end
